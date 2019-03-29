@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+// {' '} is to add some leading or trailing spaces
+
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -66,18 +68,18 @@ export default class App extends Component {
                                 .slice(1)
                                 .join(' ')}
                         </span>
+                        <button
+                            onClick={() => this.handleDelete(task.id)}
+                            className='btn btn-sm btn-danger float-right ml-1'
+                        >
+                            <i className='fas fa-times' />
+                        </button>
                         <Link
                             to={`/${task.id}/edit`}
                             className='btn btn-sm btn-info float-right'
                         >
-                            Update
+                            <i className='fas fa-edit' />
                         </Link>
-                        <button
-                            onClick={() => this.handleDelete(task.id)}
-                            className='btn btn-sm btn-danger float-right'
-                        >
-                            Delete
-                        </button>
                     </div>
                     <hr />
                 </div>
@@ -135,7 +137,8 @@ export default class App extends Component {
                                         type='submit'
                                         className='btn btn-primary'
                                     >
-                                        Create Task
+                                        Create Task{' '}
+                                        <i className='fas fa-plus' />
                                     </button>
                                 </form>
                                 <hr />

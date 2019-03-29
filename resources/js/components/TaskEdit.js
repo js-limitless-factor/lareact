@@ -36,7 +36,7 @@ export default class TaskEdit extends Component {
                 // console.log('from handle submit', response);
 
                 //after submit back to home page
-                this.props.history.push('/');
+                this.props.history.push('/home');
             });
     }
 
@@ -80,7 +80,7 @@ export default class TaskEdit extends Component {
                                         type='submit'
                                         className='btn btn-success'
                                     >
-                                        Update
+                                        Update <i className='fas fa-save' />
                                     </button>
                                 </form>
                             </div>

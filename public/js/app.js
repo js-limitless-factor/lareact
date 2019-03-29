@@ -65428,7 +65428,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
-
+ // {' '} is to add some leading or trailing spaces
 
 var App =
 /*#__PURE__*/
@@ -65498,15 +65498,19 @@ function (_Component) {
           className: "media-body"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, task.name, ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "text-muted"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "by ", task.user.name, " |", ' ', task.updated_at.split(' ').slice(1).join(' ')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/".concat(task.id, "/edit"),
-          className: "btn btn-sm btn-info float-right"
-        }, "Update"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "by ", task.user.name, " |", ' ', task.updated_at.split(' ').slice(1).join(' ')), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: function onClick() {
             return _this3.handleDelete(task.id);
           },
-          className: "btn btn-sm btn-danger float-right"
-        }, "Delete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null)));
+          className: "btn btn-sm btn-danger float-right ml-1"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-times"
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/".concat(task.id, "/edit"),
+          className: "btn btn-sm btn-info float-right"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-edit"
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null)));
       });
     } //get all the tasks from backend
 
@@ -65573,7 +65577,9 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-primary"
-      }, "Create Task")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), this.renderTasks())))));
+      }, "Create Task", ' ', react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-plus"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), this.renderTasks())))));
     }
   }]);
 
@@ -65649,7 +65655,9 @@ function (_Component) {
       }, "With supporting text below as a natural lead-in to additional content."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#",
         className: "btn btn-info"
-      }, "Go somewhere"))))));
+      }, "Go somewhere"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-muted"
+      }, "Currently using React ", react__WEBPACK_IMPORTED_MODULE_0___default.a.version))));
     }
   }]);
 
@@ -65737,7 +65745,7 @@ function (_Component) {
       }).then(function (response) {
         // console.log('from handle submit', response);
         //after submit back to home page
-        _this2.props.history.push('/');
+        _this2.props.history.push('/home');
       });
     } //get all the tasks from backend
 
@@ -65790,7 +65798,9 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-success"
-      }, "Update")))))));
+      }, "Update ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-save"
+      }))))))));
     }
   }]);
 
