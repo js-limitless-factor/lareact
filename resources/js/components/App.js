@@ -101,6 +101,12 @@ export default class App extends Component {
         this.getTasks();
     }
 
+    componentWillUnmount() {
+        this.setState = (state, callback) => {
+            return;
+        };
+    }
+
     //handle delete
     handleDelete(id) {
         //remove from local state
